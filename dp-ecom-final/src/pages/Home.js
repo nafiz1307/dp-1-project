@@ -38,20 +38,20 @@ const Home =()=>{
                     <div class="off__contact">
                         <div class="logo">
                             <a href="index.html">
-                                <img src="images/logo/uniqlo.png" alt="logo"/>
+                                <img src="assets/images/logo/uniqlo.png" alt="logo"/>
                             </a>
                         </div>
                         <p>Lorem ipsum dolor sit amet consectetu adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
                     </div>
                     <ul class="sidebar__thumd">
-                        <li><a href="#"><img src="images/sidebar-img/1.jpg" alt="sidebar images"/></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/2.jpg" alt="sidebar images"/></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/3.jpg" alt="sidebar images"/></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/4.jpg" alt="sidebar images"/></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/5.jpg" alt="sidebar images"/></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/6.jpg" alt="sidebar images"/></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/7.jpg" alt="sidebar images"/></a></li>
-                        <li><a href="#"><img src="images/sidebar-img/8.jpg" alt="sidebar images"/></a></li>
+                        <li><a href="#"><img src="assets/images/sidebar-img/1.jpg" alt="sidebar assets/images"/></a></li>
+                        <li><a href="#"><img src="assets/images/sidebar-img/2.jpg" alt="sidebar assets/images"/></a></li>
+                        <li><a href="#"><img src="assets/images/sidebar-img/3.jpg" alt="sidebar assets/images"/></a></li>
+                        <li><a href="#"><img src="assets/images/sidebar-img/4.jpg" alt="sidebar assets/images"/></a></li>
+                        <li><a href="#"><img src="assets/images/sidebar-img/5.jpg" alt="sidebar assets/images"/></a></li>
+                        <li><a href="#"><img src="assets/images/sidebar-img/6.jpg" alt="sidebar assets/images"/></a></li>
+                        <li><a href="#"><img src="assets/images/sidebar-img/7.jpg" alt="sidebar assets/images"/></a></li>
+                        <li><a href="#"><img src="assets/images/sidebar-img/8.jpg" alt="sidebar assets/images"/></a></li>
                     </ul>
                     <div class="offset__widget">
                         <div class="offset__single">
@@ -98,7 +98,7 @@ const Home =()=>{
                         <div class="shp__single__product">
                             <div class="shp__pro__thumb">
                                 <a href="#">
-                                    <img src="images/product/sm-img/1.jpg" alt="product images"/>
+                                    <img src="assets/images/product/sm-img/1.jpg" alt="product assets/images"/>
                                 </a>
                             </div>
                             <div class="shp__pro__details">
@@ -113,7 +113,7 @@ const Home =()=>{
                         <div class="shp__single__product">
                             <div class="shp__pro__thumb">
                                 <a href="#">
-                                    <img src="images/product/sm-img/2.jpg" alt="product images"/>
+                                    <img src="assets/images/product/sm-img/2.jpg" alt="product assets/images"/>
                                 </a>
                             </div>
                             <div class="shp__pro__details">
@@ -274,7 +274,7 @@ const Home =()=>{
                                             <div class="product__inner">
                                                 <div class="pro__thumb">
                                                     <a href="#">
-                                                        <img src="images/popular-pro-2/1.jpg" alt="product images"/>
+                                                        <img src="assets/images/popular-pro-2/1.jpg" alt="product assets/images"/>
                                                     </a>
                                                 </div>
                                                 <div class="popular__product__hover__info">
@@ -298,7 +298,7 @@ const Home =()=>{
                                             <div class="product__inner">
                                                 <div class="pro__thumb">
                                                     <a href="#">
-                                                        <img src="images/popular-pro-2/2.jpg" alt="product images"/>
+                                                        <img src="assets/images/popular-pro-2/2.jpg" alt="product assets/images"/>
                                                     </a>
                                                 </div>
                                                 <div class="popular__product__hover__info">
@@ -322,7 +322,7 @@ const Home =()=>{
                                             <div class="product__inner">
                                                 <div class="pro__thumb">
                                                     <a href="#">
-                                                        <img src="images/popular-pro-2/3.jpg" alt="product images"/>
+                                                        <img src="assets/images/popular-pro-2/3.jpg" alt="product assets/images"/>
                                                     </a>
                                                 </div>
                                                 <div class="popular__product__hover__info">
@@ -346,7 +346,7 @@ const Home =()=>{
                                             <div class="product__inner">
                                                 <div class="pro__thumb">
                                                     <a href="#">
-                                                        <img src="images/popular-pro-2/4.jpg" alt="product images"/>
+                                                        <img src="assets/images/popular-pro-2/4.jpg" alt="product assets/images"/>
                                                     </a>
                                                 </div>
                                                 <div class="popular__product__hover__info">
@@ -370,7 +370,7 @@ const Home =()=>{
                                             <div class="product__inner">
                                                 <div class="pro__thumb">
                                                     <a href="#">
-                                                        <img src="images/popular-pro-2/6.jpg" alt="product images"/>
+                                                        <img src="assets/images/popular-pro-2/6.jpg" alt="product assets/images"/>
                                                     </a>
                                                 </div>
                                                 <div class="popular__product__hover__info">
@@ -394,7 +394,7 @@ const Home =()=>{
                                             <div class="product__inner">
                                                 <div class="pro__thumb">
                                                     <a href="#">
-                                                        <img src="images/popular-pro-2/7.jpg" alt="product images"/>
+                                                        <img src="assets/images/popular-pro-2/7.jpg" alt="product assets/images"/>
                                                     </a>
                                                 </div>
                                                 <div class="popular__product__hover__info">
@@ -418,7 +418,7 @@ const Home =()=>{
                                             <div class="product__inner">
                                                 <div class="pro__thumb">
                                                     <a href="#">
-                                                        <img src="images/popular-pro-2/8.jpg" alt="product images"/>
+                                                        <img src="assets/images/popular-pro-2/8.jpg" alt="product assets/images"/>
                                                     </a>
                                                 </div>
                                                 <div class="popular__product__hover__info">
@@ -442,7 +442,7 @@ const Home =()=>{
                                             <div class="product__inner">
                                                 <div class="pro__thumb">
                                                     <a href="#">
-                                                        <img src="images/popular-pro-2/9.jpg" alt="product images"/>
+                                                        <img src="assets/images/popular-pro-2/9.jpg" alt="product assets/images"/>
                                                     </a>
                                                 </div>
                                                 <div class="popular__product__hover__info">
@@ -466,7 +466,7 @@ const Home =()=>{
                                             <div class="product__inner">
                                                 <div class="pro__thumb">
                                                     <a href="#">
-                                                        <img src="images/popular-pro-2/10.jpg" alt="product images"/>
+                                                        <img src="assets/images/popular-pro-2/10.jpg" alt="product assets/images"/>
                                                     </a>
                                                 </div>
                                                 <div class="popular__product__hover__info">
@@ -490,7 +490,7 @@ const Home =()=>{
                                             <div class="product__inner">
                                                 <div class="pro__thumb">
                                                     <a href="#">
-                                                        <img src="images/popular-pro-2/5.jpg" alt="product images"/>
+                                                        <img src="assets/images/popular-pro-2/5.jpg" alt="product assets/images"/>
                                                     </a>
                                                 </div>
                                                 <div class="popular__product__hover__info">
@@ -521,7 +521,7 @@ const Home =()=>{
     {/* // Body main wrapper end  
     // QUICKVIEW PRODUCT   */}
     <div id="quickview-wrapper">
-        // Modal  
+        {/* // Modal   */}
         <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
             <div class="modal-dialog modal__container" role="document">
                 <div class="modal-content">
@@ -530,13 +530,13 @@ const Home =()=>{
                     </div>
                     <div class="modal-body">
                         <div class="modal-product">
-                            {/* // Start product images   */}
-                            <div class="product-images">
-                                <div class="main-image images">
-                                    <img alt="big images" src="images/product/big-img/1.jpg"/>
+                            {/* // Start product assets/images   */}
+                            <div class="product-assets/images">
+                                <div class="main-image assets/images">
+                                    <img alt="big assets/images" src="assets/images/product/big-img/1.jpg"/>
                                 </div>
                             </div>
-                            {/* // end product images   */}
+                            {/* // end product assets/images   */}
                             <div class="product-info">
                                 <h1>Simple Fabric Bags</h1>
                                 <div class="rating__and__review">

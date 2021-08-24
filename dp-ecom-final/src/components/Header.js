@@ -13,7 +13,7 @@ const Header=()=>{
                         <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3">
                             <div class="logo">
                                 <a href="index.html">
-                                    <img src="images/logo/uniqlo.png" alt="logo"/>
+                                    <img src="assets/images/logo/logo1.png" alt="logo"/>
                                 </a>
                             </div>
                         </div>

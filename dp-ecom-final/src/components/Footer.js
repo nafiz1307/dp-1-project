@@ -12,7 +12,7 @@ const Footer=()=>{
                                 <div class="ft__widget">
                                     <div class="ft__logo">
                                         <a href="index.html">
-                                            <img src="images/logo/uniqlo.png" alt="footer logo"/>
+                                            <img src="assets/images/logo/logo1.png" alt="footer logo"/>
                                         </a>
                                     </div>
                                     <div class="footer__details">

@@ -1,15 +1,19 @@
-import './App.css';
+// import './App.css';
 import Home from "./pages/Home"
 import Header from './components/Header';
 import Footer from './components/Footer';
+import{BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import { Fragment } from "react";
 
 function App() {
   return (
-    <div>
-      <Header/>
-      <Home/>
-      <Footer/>
-    </div>
+    <Router>
+      <Fragment>
+        <Header/>
+        <Route exact path='/' component={Home} />
+        <Footer/>
+      </Fragment>
+    </Router>
   );
 }
 
