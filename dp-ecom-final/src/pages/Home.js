@@ -291,7 +291,7 @@ class Home extends React.Component{
         // Start Slider Area   */}
         <div class="slider__container slider--four">
             <div class="slider__activation__wrap owl-carousel owl-theme">
-                // Start Single Slide  
+                {/* // Start Single Slide   */}
                 <div class="slide slider__fixed--height">
                     <div class="container">
                         <div class="row">
