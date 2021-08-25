@@ -3,14 +3,14 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 // import Humberger from '../components/Humberger'
 import PagePreloader from '../components/Page-preloader'
-import Cart from '../components/Cart'
+import Checkout from '../components/Checkout'
 
-export default function CartPage(){
+export default function CheckoutPage(){
     return(
         <Fragment>
             <PagePreloader />
             <Header />
-            <Cart/>
+            <Checkout/>
             <Footer />
         </Fragment>
     )

@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Shop from './pages/Shop';
 import ShopDetail from './pages/ShopDetail'
 import CartPage from './pages/CartPage';
+import CheckoutPage from './pages/CheckoutPage';
 
 export default function Routes() {
     const [web3Context, setWeb3Context] = useState({})
@@ -16,6 +17,7 @@ export default function Routes() {
                 <Route exact path = "/shop" component = {Shop}/>
                 <Route exact path = "/shop-detail" component = {ShopDetail}/>
                 <Route exact path = "/cart" component = {CartPage}/>
+                <Route exact path = "/check-out" component = {CheckoutPage}/>
             </Web3Context.Provider>
         </Switch>
         </BrowserRouter>
