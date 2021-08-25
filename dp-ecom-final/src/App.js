@@ -9,9 +9,7 @@ function App() {
   return (
     <Router>
       <Fragment>
-        <Header/>
         <Route exact path='/' component={Home} />
-        <Footer/>
       </Fragment>
     </Router>
   );
