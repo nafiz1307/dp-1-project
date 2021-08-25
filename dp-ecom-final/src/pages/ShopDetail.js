@@ -6,6 +6,7 @@ import Header from '../components/Header'
 import PagePreloader from '../components/Page-preloader'
 import HeroSection from '../components/HeroSection'
 import ProductDetail from '../components/ProductDetail'
+import RelatedProduct from '../components/RelatedProduct'
 
 export default function Home(){
     return(
@@ -14,6 +15,7 @@ export default function Home(){
             <Header />
             <HeroSection/>
             <ProductDetail/>
+            <RelatedProduct/>
             <Footer />
         </Fragment>
     )
