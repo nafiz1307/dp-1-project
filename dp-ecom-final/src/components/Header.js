@@ -36,20 +36,10 @@ const Header=()=>{
                             </div>
                             <div className="col-lg-6 col-md-6">
                                 <div className="header__top__right">
-                                    <div className="header__top__right__social">
-                                        <a href="#"><i className="fa fa-facebook"></i></a>
-                                        <a href="#"><i className="fa fa-twitter"></i></a>
-                                        <a href="#"><i className="fa fa-linkedin"></i></a>
-                                    </div>
-                                    <div className="header__top__right__language">
-                                        <img src="img/language.png" alt=""/>
-                                        <div>English</div>
-                                        <span className="arrow_carrot-down"></span>
-                                    </div>
                                     <div className="header__top__right__auth">
                                         {!web3Context.eth && <a href="#" onClick = {connectMetamask}><i className="fa fa-user"></i> Login with Metamask</a>}
                                         {web3Context.eth && <a href="#"><i className="fa fa-user"></i> Connected to Metamask</a>}
-                                        {balance && <a href="#"><i class="bi bi-currency-bitcoin"></i> {balance}</a>}
+                                        {balance && <a href="#"><i class="fas fa-coins"></i> {balance}</a>}
                                     </div>
                                 </div>
                             </div>
