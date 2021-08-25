@@ -1,18 +1,16 @@
 import React, { Fragment } from 'react'
-import Body from '../components/Body'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 // import Humberger from '../components/Humberger'
 import PagePreloader from '../components/Page-preloader'
-import HeroSection from '../components/HeroSection'
+import Cart from '../components/Cart'
 
-export default function Home(){
+export default function CartPage(){
     return(
         <Fragment>
             <PagePreloader />
             <Header />
-            <HeroSection/>
-            <Body />
+            <Cart/>
             <Footer />
         </Fragment>
     )
