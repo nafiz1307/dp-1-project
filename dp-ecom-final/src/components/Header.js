@@ -1,8 +1,24 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import { Web3Context } from '../Context/Web3Context';
+import Web3 from 'web3'
 
 
 
 const Header=()=>{
+    const {web3Context, setWeb3Context} = useContext(Web3Context)
+    const [balance, setBalance] = useState(null)
+    const [account, setAccount] = useState(null)
+    const connectMetamask = () => {
+        ethereum.request({ method: 'eth_requestAccounts' }).then(accounts => {
+          setAccount(accounts[0])
+          web3 = new Web3(ethereum)
+          setWeb3Context(web3)
+          web3.eth.getAccounts().then(accounts => web3.eth.getBalance(accounts[0]).then(balance => setBalance(balance)))
+          console.log(accounts)
+        });
+      }
+      
+    let {ethereum, web3} = window
     return(
         <div>
             {/* <!-- Header Section Begin --> */}
@@ -31,7 +47,9 @@ const Header=()=>{
                                         <span className="arrow_carrot-down"></span>
                                     </div>
                                     <div className="header__top__right__auth">
-                                        <a href="#"><i className="fa fa-user"></i> Login with Metamask</a>
+                                        {!web3Context.eth && <a href="#" onClick = {connectMetamask}><i className="fa fa-user"></i> Login with Metamask</a>}
+                                        {web3Context.eth && <a href="#"><i className="fa fa-user"></i> Connected to Metamask</a>}
+                                        {balance && <a href="#"><i class="bi bi-currency-bitcoin"></i> {balance}</a>}
                                     </div>
                                 </div>
                             </div>

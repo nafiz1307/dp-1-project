@@ -6,18 +6,11 @@ import PagePreloader from './components/Page-preloader';
 import Humberger from './components/Humberger';
 import{BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import { Fragment } from "react";
+import Routes from './Routes';
 
 function App() {
   return (
-    <Router>
-      <Fragment>
-        <PagePreloader/>
-        <Header/>
-        <Humberger/>
-        <Route exact path='/' component={Home} />
-        <Footer/>
-      </Fragment>
-    </Router>
+    <Routes />
   );
 }
 
