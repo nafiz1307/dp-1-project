@@ -13,7 +13,9 @@ function App() {
       <Fragment>
         <PagePreloader/>
         <Header/>
+        <Humberger/>
         <Route exact path='/' component={Home} />
+        <Footer/>
       </Fragment>
     </Router>
   );
