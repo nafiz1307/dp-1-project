@@ -11,7 +11,6 @@ export default function Home(){
         <Fragment>
             <PagePreloader />
             <Header />
-            <HeroSection/>
             <Body />
             <Footer />
         </Fragment>
