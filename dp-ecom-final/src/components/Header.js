@@ -4,7 +4,7 @@ import Web3 from 'web3'
 
 
 
-const Header=()=>{
+const Header=({history})=>{
     const {web3Context, setWeb3Context} = useContext(Web3Context)
     const [balance, setBalance] = useState(null)
     const [account, setAccount] = useState(null)
@@ -57,7 +57,7 @@ const Header=()=>{
                             <nav className="header__menu">
                                 <ul>
                                     <li className="active"><a href="./index.html">Home</a></li>
-                                    <li><a href="./shop-grid.html">Shop</a></li>
+                                    <li><a href="#" onClick = {() => {history.push('shop')}}>Shop</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul className="header__menu__dropdown">
                                             <li><a href="./shop-details.html">Shop Details</a></li>
