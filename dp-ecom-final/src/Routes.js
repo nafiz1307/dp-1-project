@@ -6,12 +6,21 @@ import Shop from './pages/Shop';
 import ShopDetail from './pages/ShopDetail'
 import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
+import { ContextStore } from './Context/ContextStore';
 
 export default function Routes() {
     const [web3Context, setWeb3Context] = useState({})
+    const [contextStore, setContextStore] = useState({
+        cart: {},
+        numberOfProductInCart: 0,
+        wishList: {},
+        numberOfProductInWishList: 0,
+        
+    })
     return(
         <BrowserRouter>
         <Switch>
+            <ContextStore.Provider value={{contextStore, setContextStore}}>
             <Web3Context.Provider value={{web3Context, setWeb3Context}}>
                 <Route exact path = "/" component = {Home}/>
                 <Route exact path = "/shop" component = {Shop}/>
@@ -19,6 +28,7 @@ export default function Routes() {
                 <Route exact path = "/cart" component = {CartPage}/>
                 <Route exact path = "/check-out" component = {CheckoutPage}/>
             </Web3Context.Provider>
+            </ContextStore.Provider>
         </Switch>
         </BrowserRouter>
     )

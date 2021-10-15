@@ -1,0 +1,1 @@
+exports.endpoint = "http://localhost:5000"

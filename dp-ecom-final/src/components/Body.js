@@ -1,6 +1,27 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
+import axios from 'axios'
+import { endpoint } from "../Config/vars"
 
 const Body =()=>{
+    const [state, setState] = useState({
+        products: []
+    })
+    useEffect(() => {
+        async function fetcProducts(){
+           let res = await axios.get(`${endpoint}/api/product/`)
+           let products =  [...res.data]
+           products = await Promise.all(products.map(async(product) => {
+            res = await axios.get(`${endpoint}/api/product/${product.cid}`)
+            product = {...product, ...JSON.parse(res.data)}
+            return product
+       }))
+       console.log(products)
+           setState({...state, products})
+           
+        }
+    fetcProducts()
+        
+    },[])
     return(
         <div>
             {/* <!-- Hero Section Begin --> */}
@@ -63,9 +84,10 @@ const Body =()=>{
                         </div>
                     </div>
                     <div className="row featured__filter">
-                        <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                        {state.products.map(product => (
+                            <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                             <div className="featured__item">
-                                <div className="featured__item__pic set-bg" data-setbg="img/featured/feature-1.jpg">
+                                <div className="featured__item__pic set-bg" data-setbg={`https://gateway.ipfs.io/ipfs/${product.imgUri}`}>
                                     <ul className="featured__item__pic__hover">
                                         <li><a href="#"><i className="fa fa-heart"></i></a></li>
                                         <li><a href="#"><i className="fa fa-retweet"></i></a></li>
@@ -73,116 +95,13 @@ const Body =()=>{
                                     </ul>
                                 </div>
                                 <div className="featured__item__text">
-                                    <h6><a href="#">Crab Pool Security</a></h6>
-                                    <h5>$30.00</h5>
+                                    <h6><a href="#">{product.name}</a></h6>
+                                    <h5>${product.price}</h5>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-3 col-md-4 col-sm-6 mix vegetables fastfood">
-                            <div className="featured__item">
-                                <div className="featured__item__pic set-bg" data-setbg="img/featured/feature-2.jpg">
-                                    <ul className="featured__item__pic__hover">
-                                        <li><a href="#"><i className="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-retweet"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div className="featured__item__text">
-                                    <h6><a href="#">Crab Pool Security</a></h6>
-                                    <h5>$30.00</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-md-4 col-sm-6 mix vegetables fresh-meat">
-                            <div className="featured__item">
-                                <div className="featured__item__pic set-bg" data-setbg="img/featured/feature-3.jpg">
-                                    <ul className="featured__item__pic__hover">
-                                        <li><a href="#"><i className="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-retweet"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div className="featured__item__text">
-                                    <h6><a href="#">Crab Pool Security</a></h6>
-                                    <h5>$30.00</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-md-4 col-sm-6 mix fastfood oranges">
-                            <div className="featured__item">
-                                <div className="featured__item__pic set-bg" data-setbg="img/featured/feature-4.jpg">
-                                    <ul className="featured__item__pic__hover">
-                                        <li><a href="#"><i className="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-retweet"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div className="featured__item__text">
-                                    <h6><a href="#">Crab Pool Security</a></h6>
-                                    <h5>$30.00</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
-                            <div className="featured__item">
-                                <div className="featured__item__pic set-bg" data-setbg="img/featured/feature-5.jpg">
-                                    <ul className="featured__item__pic__hover">
-                                        <li><a href="#"><i className="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-retweet"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div className="featured__item__text">
-                                    <h6><a href="#">Crab Pool Security</a></h6>
-                                    <h5>$30.00</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fastfood">
-                            <div className="featured__item">
-                                <div className="featured__item__pic set-bg" data-setbg="img/featured/feature-6.jpg">
-                                    <ul className="featured__item__pic__hover">
-                                        <li><a href="#"><i className="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-retweet"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div className="featured__item__text">
-                                    <h6><a href="#">Crab Pool Security</a></h6>
-                                    <h5>$30.00</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
-                            <div className="featured__item">
-                                <div className="featured__item__pic set-bg" data-setbg="img/featured/feature-7.jpg">
-                                    <ul className="featured__item__pic__hover">
-                                        <li><a href="#"><i className="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-retweet"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div className="featured__item__text">
-                                    <h6><a href="#">Crab Pool Security</a></h6>
-                                    <h5>$30.00</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-3 col-md-4 col-sm-6 mix fastfood vegetables">
-                            <div className="featured__item">
-                                <div className="featured__item__pic set-bg" data-setbg="img/featured/feature-8.jpg">
-                                    <ul className="featured__item__pic__hover">
-                                        <li><a href="#"><i className="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-retweet"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div className="featured__item__text">
-                                    <h6><a href="#">Crab Pool Security</a></h6>
-                                    <h5>$30.00</h5>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
+                        
                     </div>
                 </div>
             </section>
