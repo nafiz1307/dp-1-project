@@ -87,7 +87,7 @@ const Body =()=>{
                         {state.products.map(product => (
                             <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                             <div className="featured__item">
-                                <div className="featured__item__pic set-bg" data-setbg={`https://gateway.ipfs.io/ipfs/${product.imgUri}`}>
+                                <div className="featured__item__pic set-bg" ><img src={`https://gateway.ipfs.io/ipfs/${product.imgUri}`}/>
                                     <ul className="featured__item__pic__hover">
                                         <li><a href="#"><i className="fa fa-heart"></i></a></li>
                                         <li><a href="#"><i className="fa fa-retweet"></i></a></li>
