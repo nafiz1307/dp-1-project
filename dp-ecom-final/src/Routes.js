@@ -6,11 +6,7 @@ import Shop from './pages/Shop';
 import ShopDetail from './pages/ShopDetail'
 import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
-<<<<<<< Updated upstream
-=======
-import { ContextStore } from './Context/ContextStore';
 import Shipping from "./pages/Shipping"
->>>>>>> Stashed changes
 
 export default function Routes() {
     const [web3Context, setWeb3Context] = useState({})
