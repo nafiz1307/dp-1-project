@@ -417,14 +417,15 @@ ol {
 
 .header__menu {
 	padding: 24px 0;
+	margin-left: 200px;
 }
-
 
 .header__menu ul li {
 	list-style: none;
 	display: inline-block;
 	margin-right: 50px;
 	position: relative;
+	
 }
 
 .header__menu ul li .header__menu__dropdown {
@@ -462,6 +463,9 @@ ol {
 
 .header__menu ul li.active  {
 	color: #7fad39;
+	font-weight: bold;
+	text-decoration: underline;
+	font-size: larger;
 }
 
 .header__menu ul li:hover .header__menu__dropdown {
@@ -2132,7 +2136,7 @@ ol {
 	border: 1px solid #ebebeb;
 	padding-left: 20px;
 	font-size: 16px;
-	color: #b2b2b2;
+	color: #000000;
 	border-radius: 4px;
 }
 

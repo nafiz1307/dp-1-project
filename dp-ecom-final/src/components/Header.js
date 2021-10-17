@@ -64,7 +64,7 @@ const Header=({history})=>{
                     <div className="row">
                         <div className="col-lg-3">
                             <div className="header__logo">
-                                <a href="./index.html"><img src="img/logo.png" alt=""/></a>
+                            <img src="https://i.ibb.co/XXHRw37/1309289.png" alt="1309289" border="0" height={50}/>
                             </div>
                         </div>
                         <div className="col-lg-6">
