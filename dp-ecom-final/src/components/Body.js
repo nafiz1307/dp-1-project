@@ -8,14 +8,14 @@ const Body =()=>{
     const [state, setState] = useState({
         products: []
     })
-    const { cart, numberOfProductInCart, wishList, numberOfProductInWishList} = contextStore
+    const { cart, numberOfProductInCart, wishList, numberOfProductInWishList, products, cartTotal} = contextStore
     useEffect(() => {
         async function fetcProducts(){
            let res = await axios.get(`${endpoint}/api/product/addedProducts`)
            let products =  [...res.data]
            products = await Promise.all(products.map(async(product) => {
             res = await axios.get(`${endpoint}/api/product/${product.cid}`)
-            product = {...product, ...JSON.parse(res.data), addedToCart: false, addedToWishList:false}
+            product = {...product, ...JSON.parse(res.data)}
             return product
        }))
        console.log(products)
@@ -25,13 +25,24 @@ const Body =()=>{
     fetcProducts()
         
     },[])
+    const isAvailableInCart = (product) => {
+        if(cart.find(element => element.cid === product.cid)){
+            return true
+        }
+        return false
+    }
+    const isAvailableinWishList = (product) => {
+        if(wishList.find(element => element.cid === product.cid)){
+            return true
+        }
+        return false
+    }
     const onClickWish = (product) => {
-        product.addedToWishList = true
+        
         setContextStore({...contextStore, wishList: [...wishList, product], numberOfProductInWishList: numberOfProductInWishList+1})
     }
     const onClickCart = (product) => {
-        product.addedToCart = true
-        setContextStore({...contextStore, cart: [...cart, product], numberOfProductInCart: numberOfProductInCart + 1})
+        setContextStore({...contextStore, cart: [...cart, product], numberOfProductInCart: numberOfProductInCart + 1, cartTotal: cartTotal+Number(product.price)})
     }
 
     return(
@@ -101,8 +112,8 @@ const Body =()=>{
                             <div className="featured__item">
                                 <div className="featured__item__pic set-bg" ><img src={`https://gateway.ipfs.io/ipfs/${product.imgUri}`}/>
                                     <ul className="featured__item__pic__hover">
-                                        {!product.addedToWishList && <li onClick = {() => {onClickWish(product)}}><i className="fa fa-heart"></i></li>}
-                                        {!product.addedToCart && <li onClick = {() => {onClickCart(product)}}><i className="fa fa-shopping-cart"></i></li>}
+                                        {!isAvailableinWishList(product) && <li onClick = {() => {onClickWish(product)}}><i className="fa fa-heart"></i></li>}
+                                        {!isAvailableInCart(product) && <li onClick = {() => {onClickCart(product)}}><i className="fa fa-shopping-cart"></i></li>}
                                     </ul>
                                 </div>
                                 <div className="featured__item__text">

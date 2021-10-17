@@ -15,6 +15,7 @@ function App() {
         numberOfProductInCart: 0,
         wishList: [],
         numberOfProductInWishList: 0,
+        cartTotal: 0
     });
     return (
         <ContextStore.Provider value={{ contextStore, setContextStore }}>

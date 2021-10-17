@@ -8,9 +8,9 @@ import PagePreloader from '../components/Page-preloader'
 export default function Home({history}){
     return(
         <Fragment>
-            <PagePreloader />
+            {/* <PagePreloader /> */}
             <Header history = {history}/>
-            <Body />
+            <Body history = {history} />
             <Footer />
         </Fragment>
     )
