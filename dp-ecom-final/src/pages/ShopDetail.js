@@ -12,9 +12,7 @@ export default function ShopDetail(){
     return(
         <Fragment>
             <Header />
-            <HeroSection/>
             <ProductDetail/>
-            <RelatedProduct/>
             <Footer />
         </Fragment>
     )
