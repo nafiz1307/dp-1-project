@@ -8,9 +8,7 @@ import { fungibleTokenAbi, fungibleTokenAddress, supplyChainContractAddress, sup
 
 const Header=({history})=>{
     const {contextStore, setContextStore} = useContext(ContextStore)
-    const [balance, setBalance] = useState(null)
-    const [connected, setConnected] = useState(false)
-    const {account, numberOfProductInCart, numberOfProductInWishList} = contextStore
+    const {account, numberOfProductInCart, numberOfProductInWishList, balance, cartTotal} = contextStore
     const connectMetamask = () => {
         const provider = new ethers.providers.Web3Provider(window.ethereum)
         const signer = provider.getSigner()
@@ -26,9 +24,7 @@ const Header=({history})=>{
         )
         signer.getAddress().then(account => {
             erc20.balanceOf(account).then(balance => {
-                setBalance(balance.toString())
-                setConnected(true)
-                setContextStore({...contextStore, account, erc20, supplyChain})
+                setContextStore({...contextStore, account, erc20, supplyChain, balance: balance.toString()})
             }).catch(err => {
                 console.log(err)
             })
@@ -38,6 +34,7 @@ const Header=({history})=>{
       
     return(
         <div>
+            {console.log(account)}
             {/* <!-- Header Section Begin --> */}
             <header className="header">
                 <div className="header__top">
@@ -73,28 +70,19 @@ const Header=({history})=>{
                         <div className="col-lg-6">
                             <nav className="header__menu">
                                 <ul>
-                                    <li className="active"><a href="./index.html">Home</a></li>
-                                    <li><a href="#" onClick = {() => {history.push('shop')}}>Shop</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <ul className="header__menu__dropdown">
-                                            <li><a href="./shop-details.html">Shop Details</a></li>
-                                            <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                            <li><a href="./checkout.html">Check Out</a></li>
-                                            <li><a href="./blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="./blog.html">Blog</a></li>
-                                    <li><a href="./contact.html">Contact</a></li>
+                                    <li className="active" onClick = {() => {history.push("")}}>Home</li>
+                                    <li className="active">Orders</li>
+                                   
                                 </ul>
                             </nav>
                         </div>
                         <div className="col-lg-3">
                             <div className="header__cart">
                                 <ul>
-                                    <li><a href="#"><i className="fa fa-heart"></i> <span>{contextStore.numberOfProductInWishList}</span></a></li>
-                                    <li><a href="#"><i className="fa fa-shopping-bag"></i> <span>{contextStore.numberOfProductInCart}</span></a></li>
+                                    <li><a ><i className="fa fa-heart"></i> <span>{numberOfProductInWishList}</span></a></li>
+                                    <li><a ><i className="fa fa-shopping-bag" onClick = {() => history.push("cart")}></i> <span>{numberOfProductInCart}</span></a></li>
                                 </ul>
-                                <div className="header__cart__price">item: <span>$150.00</span></div>
+                                <div className="header__cart__price">item: <span>${cartTotal}</span></div>
                             </div>
                         </div>
                     </div>

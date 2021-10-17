@@ -9,10 +9,10 @@ import HeroSection from '../components/HeroSection'
 export default function Shop({history}){
     return(
         <Fragment>
-            <PagePreloader />
+            {/* <PagePreloader /> */}
             <Header history = {history}/>
             {/* <Humberger /> */}
-            <HeroSection/>
+            {/* <HeroSection/> */}
             <ShopBody/>
             <Footer />
         </Fragment>

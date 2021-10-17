@@ -5,12 +5,12 @@ import Header from '../components/Header'
 import PagePreloader from '../components/Page-preloader'
 import Cart from '../components/Cart'
 
-export default function CartPage(){
+export default function CartPage({history}){
     return(
         <Fragment>
-            <PagePreloader />
-            <Header />
-            <Cart/>
+            {/* <PagePreloader /> */}
+            <Header history = {history}/>
+            <Cart history = {history}/>
             <Footer />
         </Fragment>
     )
