@@ -11,7 +11,6 @@ import RelatedProduct from '../components/RelatedProduct'
 export default function ShopDetail(){
     return(
         <Fragment>
-            <PagePreloader />
             <Header />
             <HeroSection/>
             <ProductDetail/>

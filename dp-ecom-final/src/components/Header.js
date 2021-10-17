@@ -73,26 +73,26 @@ const Header=({history})=>{
                         <div className="col-lg-6">
                             <nav className="header__menu">
                                 <ul>
-                                    <li className="active"><a href="./index.html">Home</a></li>
-                                    <li><a href="#" onClick = {() => {history.push('shop')}}>Shop</a></li>
-                                    <li><a href="#">Pages</a>
+                                    <li className="active">Home</li>
+                                    <li onClick = {() => {history.push('shop')}}>Shop</li>
+                                    <li>Pages
                                         <ul className="header__menu__dropdown">
-                                            <li><a href="./shop-details.html">Shop Details</a></li>
-                                            <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                            <li><a href="./checkout.html">Check Out</a></li>
-                                            <li><a href="./blog-details.html">Blog Details</a></li>
+                                            <li><>Shop Details</></li>
+                                            <li><>Shoping Cart</></li>
+                                            <li><>Check Out</></li>
+                                            <li><>Blog Details</></li>
                                         </ul>
                                     </li>
-                                    <li><a href="./blog.html">Blog</a></li>
-                                    <li><a href="./contact.html">Contact</a></li>
+                                    <li>Blog</li>
+                                    <li>Contact</li>
                                 </ul>
                             </nav>
                         </div>
                         <div className="col-lg-3">
                             <div className="header__cart">
                                 <ul>
-                                    <li><a href="#"><i className="fa fa-heart"></i> <span>{contextStore.numberOfProductInWishList}</span></a></li>
-                                    <li><a href="#"><i className="fa fa-shopping-bag"></i> <span>{contextStore.numberOfProductInCart}</span></a></li>
+                                    <li><a ><i className="fa fa-heart"></i> <span>{contextStore.numberOfProductInWishList}</span></a></li>
+                                    <li><a ><i className="fa fa-shopping-bag"></i> <span>{contextStore.numberOfProductInCart}</span></a></li>
                                 </ul>
                                 <div className="header__cart__price">item: <span>$150.00</span></div>
                             </div>
