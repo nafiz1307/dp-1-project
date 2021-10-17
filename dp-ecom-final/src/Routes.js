@@ -6,7 +6,9 @@ import Shop from './pages/Shop';
 import ShopDetail from './pages/ShopDetail'
 import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
+
 import { ContextStore } from './Context/ContextStore';
+
 
 export default function Routes() {
     const [web3Context, setWeb3Context] = useState({})
