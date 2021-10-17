@@ -1,26 +1,41 @@
 import React, { useContext, useState } from 'react'
-import { Web3Context } from '../Context/Web3Context';
-import Web3 from 'web3'
+
 import { ContextStore } from '../Context/ContextStore';
+import {ethers} from  "ethers"
+import { fungibleTokenAbi, fungibleTokenAddress, supplyChainContractAddress, supplyChainSmartContractAbi } from '../Config/vars';
 
 
 
 const Header=({history})=>{
-    const {web3Context, setWeb3Context} = useContext(Web3Context)
     const {contextStore, setContextStore} = useContext(ContextStore)
     const [balance, setBalance] = useState(null)
-    const [account, setAccount] = useState(null)
+    const [connected, setConnected] = useState(false)
+    const {account, numberOfProductInCart, numberOfProductInWishList} = contextStore
     const connectMetamask = () => {
-        ethereum.request({ method: 'eth_requestAccounts' }).then(accounts => {
-          setAccount(accounts[0])
-          web3 = new Web3(ethereum)
-          setWeb3Context(web3)
-          web3.eth.getAccounts().then(accounts => web3.eth.getBalance(accounts[0]).then(balance => setBalance(balance)))
-          console.log(accounts)
-        });
+        const provider = new ethers.providers.Web3Provider(window.ethereum)
+        const signer = provider.getSigner()
+        const erc20 = new ethers.Contract(
+            fungibleTokenAddress,
+            fungibleTokenAbi,
+            signer
+        );
+        const supplyChain = new ethers.Contract(
+            supplyChainContractAddress,
+            supplyChainSmartContractAbi,
+            signer
+        )
+        signer.getAddress().then(account => {
+            erc20.balanceOf(account).then(balance => {
+                setBalance(balance.toString())
+                setConnected(true)
+                setContextStore({...contextStore, account, erc20, supplyChain})
+            }).catch(err => {
+                console.log(err)
+            })
+        })
+        
       }
       
-    let {ethereum, web3} = window
     return(
         <div>
             {/* <!-- Header Section Begin --> */}
@@ -39,8 +54,8 @@ const Header=({history})=>{
                             <div className="col-lg-6 col-md-6">
                                 <div className="header__top__right">
                                     <div className="header__top__right__auth">
-                                        {!web3Context.eth && <a href="#" onClick = {connectMetamask}><i className="fa fa-user"></i> Login with Metamask</a>}
-                                        {web3Context.eth && <a href="#"><i className="fa fa-user"></i> Connected to Metamask</a>}
+                                        {!account && <a href="#" onClick = {connectMetamask}><i className="fa fa-user"></i> Login with Metamask</a>}
+                                        {account && <a href="#"><i className="fa fa-user"></i> Connected to Metamask</a>}
                                         {balance && <a href="#"><i class="fas fa-coins"></i> {balance}</a>}
                                     </div>
                                 </div>

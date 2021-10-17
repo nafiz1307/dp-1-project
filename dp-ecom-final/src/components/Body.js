@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import axios from 'axios'
 import { endpoint } from "../Config/vars"
+import { ContextStore } from "../Context/ContextStore"
 
 const Body =()=>{
+    const {contextStore, setContextStore} = useContext(ContextStore)
     const [state, setState] = useState({
         products: []
     })
+    const { cart, numberOfProductInCart, wishList, numberOfProductInWishList} = contextStore
     useEffect(() => {
         async function fetcProducts(){
-           let res = await axios.get(`${endpoint}/api/product/`)
+           let res = await axios.get(`${endpoint}/api/product/addedProducts`)
            let products =  [...res.data]
            products = await Promise.all(products.map(async(product) => {
             res = await axios.get(`${endpoint}/api/product/${product.cid}`)
-            product = {...product, ...JSON.parse(res.data)}
+            product = {...product, ...JSON.parse(res.data), addedToCart: false, addedToWishList:false}
             return product
        }))
        console.log(products)
@@ -22,6 +25,15 @@ const Body =()=>{
     fetcProducts()
         
     },[])
+    const onClickWish = (product) => {
+        product.addedToWishList = true
+        setContextStore({...contextStore, wishList: [...wishList, product], numberOfProductInWishList: numberOfProductInWishList+1})
+    }
+    const onClickCart = (product) => {
+        product.addedToCart = true
+        setContextStore({...contextStore, cart: [...cart, product], numberOfProductInCart: numberOfProductInCart + 1})
+    }
+
     return(
         <div>
             {/* <!-- Hero Section Begin --> */}
@@ -89,9 +101,8 @@ const Body =()=>{
                             <div className="featured__item">
                                 <div className="featured__item__pic set-bg" ><img src={`https://gateway.ipfs.io/ipfs/${product.imgUri}`}/>
                                     <ul className="featured__item__pic__hover">
-                                        <li><a href="#"><i className="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-retweet"></i></a></li>
-                                        <li><a href="#"><i className="fa fa-shopping-cart"></i></a></li>
+                                        {!product.addedToWishList && <li onClick = {() => {onClickWish(product)}}><a href="#"><i className="fa fa-heart"></i></a></li>}
+                                        {!product.addedToCart && <li onClick = {() => {onClickCart(product)}}><a href="#"><i className="fa fa-shopping-cart"></i></a></li>}
                                     </ul>
                                 </div>
                                 <div className="featured__item__text">
