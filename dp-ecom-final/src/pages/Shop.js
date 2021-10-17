@@ -6,11 +6,11 @@ import PagePreloader from '../components/Page-preloader'
 import ShopBody from '../components/ShopBody'
 import HeroSection from '../components/HeroSection'
 
-export default function Shop(){
+export default function Shop({history}){
     return(
         <Fragment>
             <PagePreloader />
-            <Header />
+            <Header history = {history}/>
             {/* <Humberger /> */}
             <HeroSection/>
             <ShopBody/>

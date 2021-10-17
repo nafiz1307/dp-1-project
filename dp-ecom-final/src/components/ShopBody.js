@@ -113,7 +113,7 @@ const ShopBody=()=>{
                                     <div class="latest-prdouct__slider__item">
                                         <a href="#" class="latest-product__item">
                                             <div class="latest-product__item__pic">
-                                                <img src="img/latest-product/lp-1.jpg" alt=""/>
+                                            <img src={"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZHVjdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"} alt="ban" border="0"/>
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>Crab Pool Security</h6>
@@ -122,7 +122,7 @@ const ShopBody=()=>{
                                         </a>
                                         <a href="#" class="latest-product__item">
                                             <div class="latest-product__item__pic">
-                                                <img src="img/latest-product/lp-2.jpg" alt=""/>
+                                                <img src={"https://i.ibb.co/GPYtRwV/ban.png"} alt=""/>
                                             </div>
                                             <div class="latest-product__item__text">
                                                 <h6>Crab Pool Security</h6>

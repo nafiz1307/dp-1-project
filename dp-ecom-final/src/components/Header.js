@@ -1,11 +1,13 @@
 import React, { useContext, useState } from 'react'
 import { Web3Context } from '../Context/Web3Context';
 import Web3 from 'web3'
+import { ContextStore } from '../Context/ContextStore';
 
 
 
-const Header=()=>{
+const Header=({history})=>{
     const {web3Context, setWeb3Context} = useContext(Web3Context)
+    const {contextStore, setContextStore} = useContext(ContextStore)
     const [balance, setBalance] = useState(null)
     const [account, setAccount] = useState(null)
     const connectMetamask = () => {
@@ -57,7 +59,7 @@ const Header=()=>{
                             <nav className="header__menu">
                                 <ul>
                                     <li className="active"><a href="./index.html">Home</a></li>
-                                    <li><a href="./shop-grid.html">Shop</a></li>
+                                    <li><a href="#" onClick = {() => {history.push('shop')}}>Shop</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul className="header__menu__dropdown">
                                             <li><a href="./shop-details.html">Shop Details</a></li>
@@ -74,8 +76,8 @@ const Header=()=>{
                         <div className="col-lg-3">
                             <div className="header__cart">
                                 <ul>
-                                    <li><a href="#"><i className="fa fa-heart"></i> <span>1</span></a></li>
-                                    <li><a href="#"><i className="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                                    <li><a href="#"><i className="fa fa-heart"></i> <span>{contextStore.numberOfProductInWishList}</span></a></li>
+                                    <li><a href="#"><i className="fa fa-shopping-bag"></i> <span>{contextStore.numberOfProductInCart}</span></a></li>
                                 </ul>
                                 <div className="header__cart__price">item: <span>$150.00</span></div>
                             </div>
