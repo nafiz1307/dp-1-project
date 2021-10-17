@@ -9,6 +9,8 @@ import CheckoutPage from './pages/CheckoutPage';
 
 import { ContextStore } from './Context/ContextStore';
 import Shipping from './pages/Shipping';
+import Orders from './pages/Orders';
+import ListOrderPage from './pages/ListOrderPage';
 
 
 export default function Routes() {
@@ -23,6 +25,8 @@ export default function Routes() {
                 <Route exact path = "/cart" component = {CartPage}/>
                 <Route exact path = "/check-out" component = {CheckoutPage}/>
                 <Route exact path = "/shipping-details" component = {Shipping} />
+                <Route exact path = "/order-list" component = {Orders} />
+                <Route exact path = "/list-order" component = {ListOrderPage} />
         </Switch>
         </BrowserRouter>
     )

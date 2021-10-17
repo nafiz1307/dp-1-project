@@ -129,3 +129,144 @@ figure figcaption h2 {
   transition: all 0.3s height 0.3s;
   transform-origin: top center;
 }
+
+   
+.news-container {
+  padding: 0 6rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  /* max-width: 50%; */
+}
+
+.course {
+  background-color: #E59500;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  display: flex;
+  max-width: 100%;
+  /* margin: 20px; */
+  overflow: hidden;
+  width: 100%;
+  height: 100px;
+  margin-top: 100px;
+}
+
+.course:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.course h6 {
+  opacity: 0.6;
+  margin: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.course h2 {
+  letter-spacing: 1px;
+  margin: 10px 0;
+}
+
+.course-preview {
+  background-color: #7fad39;
+  color: #002642;
+  padding: 2rem;
+  width: 250px;
+  text-transform: uppercase;
+  padding-right: 10rem;
+}
+
+.course-preview a {
+  color: #002642;
+  display: inline-block;
+  font-size: 1rem;
+  opacity: 0.6;
+  margin-top: 30px;
+  text-decoration: none;
+}
+
+.course-info {
+  padding: 2rem;
+  /* position: relative; */
+  width: 100%;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  color: #002642;
+}
+
+.course-info .bangla {
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+.btn {
+  background-color: #002642;
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  color: #7fad39;
+  font-size: .85rem;
+  padding: .5rem 1rem;
+  letter-spacing: 2px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+}
+
+.btn a {
+  text-decoration: none;
+  color:#7fad39;
+}
+
+.social .fa {
+  background: #002642;
+  padding: .5rem .75rem !important;
+  border-radius: 1rem;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.social {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.social .containing,
+.social .link {
+  padding-right: .5rem;
+}
+
+@media (max-width: 54.375rem) {
+  .heading {
+      font-size: 2.5rem;
+      text-align: center;
+      padding: 2rem;
+      padding-top: 5rem;
+      padding-bottom: 0;
+  }
+  .course {
+      flex-direction: column;
+  }
+  .news-container {
+      padding: 0 2rem;
+  }
+  h2 {
+      font-size: 1.15rem;
+  }
+  .social {
+      flex-direction: column;
+  }
+  .social .containing,
+  .social .link {
+      padding-top: .75rem;
+  }
+  .social a {
+      text-decoration: none;
+  }
+}
