@@ -101,8 +101,8 @@ const Body =()=>{
                             <div className="featured__item">
                                 <div className="featured__item__pic set-bg" ><img src={`https://gateway.ipfs.io/ipfs/${product.imgUri}`}/>
                                     <ul className="featured__item__pic__hover">
-                                        {!product.addedToWishList && <li onClick = {() => {onClickWish(product)}}><a href="#"><i className="fa fa-heart"></i></a></li>}
-                                        {!product.addedToCart && <li onClick = {() => {onClickCart(product)}}><a href="#"><i className="fa fa-shopping-cart"></i></a></li>}
+                                        {!product.addedToWishList && <li onClick = {() => {onClickWish(product)}}><i className="fa fa-heart"></i></li>}
+                                        {!product.addedToCart && <li onClick = {() => {onClickCart(product)}}><i className="fa fa-shopping-cart"></i></li>}
                                     </ul>
                                 </div>
                                 <div className="featured__item__text">
