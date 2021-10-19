@@ -1,4 +1,4 @@
-# dp-ecom-final
+# dp-1-project
 This is a ecommerce website for DP-2 Project in which the supply chain is implemented using etherium blockchain.
 ## Linked Github Repos
 [Link to Seller Portal](https://github.com/hafizsheetab/seller_portal)<br>
