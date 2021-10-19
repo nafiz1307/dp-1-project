@@ -8,11 +8,11 @@ import HeroSection from '../components/HeroSection'
 import ProductDetail from '../components/ProductDetail'
 import RelatedProduct from '../components/RelatedProduct'
 
-export default function ShopDetail(){
+export default function ShopDetail({history}){
     return(
         <Fragment>
-            <Header />
-            <ProductDetail/>
+            <Header history = {history}/>
+            <ProductDetail history = {history}/>
             <Footer />
         </Fragment>
     )

@@ -9,11 +9,11 @@ import ProductDetail from '../components/ProductDetail'
 import RelatedProduct from '../components/RelatedProduct'
 import OrdersList from '../components/OrderList'
 
-export default function Orders(){
+export default function Orders({history}){
     return(
         <Fragment>
-            <Header />
-            <OrdersList/>
+            <Header history = {history}/>
+            <OrdersList history = {history}/>
         </Fragment>
     )
 }

@@ -9,10 +9,9 @@ import Tracking from '../components/Tracking'
 export default function Shipping({history}){
     return(
         <Fragment>
-            <PagePreloader />
             <Header history = {history}/>
             {/* <Humberger /> */}
-            <Tracking/>
+            <Tracking history = {history}/>
             <Footer />
         </Fragment>
     )

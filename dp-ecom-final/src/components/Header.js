@@ -71,7 +71,7 @@ const Header=({history})=>{
                             <nav className="header__menu">
                                 <ul>
                                     <li className="active" onClick = {() => {history.push("")}}>Home</li>
-                                    <li className="active">Orders</li>
+                                    <li className="active" onClick = {() => {history.push("/orders")}}>Orders</li>
                                    
                                 </ul>
                             </nav>
@@ -79,7 +79,6 @@ const Header=({history})=>{
                         <div className="col-lg-3">
                             <div className="header__cart">
                                 <ul>
-                                    <li><a ><i className="fa fa-heart"></i> <span>{numberOfProductInWishList}</span></a></li>
                                     <li><a ><i className="fa fa-shopping-bag" onClick = {() => history.push("cart")}></i> <span>{numberOfProductInCart}</span></a></li>
                                 </ul>
                                 <div className="header__cart__price">item: <span>${cartTotal}</span></div>

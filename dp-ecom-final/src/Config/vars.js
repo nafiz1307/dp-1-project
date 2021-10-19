@@ -1,9 +1,10 @@
 exports.endpoint = "http://localhost:5000"
 exports.ganacheUrlEndPoint = "http://192.168.0.109:8545"
-exports.supplyChainContractAddress = "0x0FD3e9dbbE790756b0EE42a975b92b4eB2Aa5DE3"
+exports.supplyChainContractAddress = "0xDD5a60cB916A4f66EA9F2eef7e4Fda9413645E15"
 exports.supplyChainSmartContractAbi = require('./SupplyChainSmartContractAbi.json')
-exports.fungibleTokenAddress = "0x0f1c17B6661DE848eE8390214E33E129CC0137A6"
+exports.fungibleTokenAddress = "0xBE9a5D09FA34BDb6aaAb1e9a60087c28d88374Dc"
 exports.fungibleTokenAbi = require('./FungibleTokenAbi.json')
-exports.nonFungbleTokenAddress = "0xe1D04Eb936d1407Cd2C8215dE36D4E9f79375a22"
+exports.nonFungbleTokenAddress = "0x813D6BC9AB79417b1B49beF835c18286eFdD8232"
 exports.nonFungileTokenAbi = require('./NonFungibleTokenAbi.json')
 exports.privateKey = "3e11374c698e3c8cba51905f2d57d75c9011a0fc97972196b3e02fad5f710ffa"
+exports.adminAccountAddress = "0x4dbF5d143912f1cA1E37Ea99d91C31C3D65e6b71"

@@ -164,6 +164,8 @@ figure figcaption h2 {
   margin: 0;
   letter-spacing: 1px;
   text-transform: uppercase;
+  font-size: x-small;
+  
 }
 
 .course h2 {
@@ -178,6 +180,7 @@ figure figcaption h2 {
   width: 250px;
   text-transform: uppercase;
   padding-right: 10rem;
+  font-size: x-small;
 }
 
 .course-preview a {
@@ -193,7 +196,6 @@ figure figcaption h2 {
   padding: 2rem;
   /* position: relative; */
   width: 100%;
-  text-transform: uppercase;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -218,10 +220,13 @@ figure figcaption h2 {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
 }
-
+.btn :hover{
+  cursor: pointer;
+}
 .btn a {
   text-decoration: none;
   color:#7fad39;
+  cursor: pointer;
 }
 
 .social .fa {

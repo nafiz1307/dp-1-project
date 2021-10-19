@@ -21,12 +21,12 @@ export default function Routes() {
         <Switch>
                 <Route exact path = "/" component = {Home}/>
                 <Route exact path = "/shop" component = {Shop}/>
-                <Route exact path = "/shop-detail" component = {ShopDetail}/>
+                <Route exact path = "/product-detail" component = {ShopDetail}/>
                 <Route exact path = "/cart" component = {CartPage}/>
                 <Route exact path = "/check-out" component = {CheckoutPage}/>
-                <Route exact path = "/shipping-details" component = {Shipping} />
-                <Route exact path = "/order-list" component = {Orders} />
-                <Route exact path = "/list-order" component = {ListOrderPage} />
+                <Route exact path = "/shipping-status" component = {Shipping} />
+                <Route exact path = "/ordered-product-List" component = {Orders} />
+                <Route exact path = "/orders" component = {ListOrderPage} />
         </Switch>
         </BrowserRouter>
     )

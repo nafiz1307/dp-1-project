@@ -13,7 +13,7 @@ export default function Shop({history}){
             <Header history = {history}/>
             {/* <Humberger /> */}
             {/* <HeroSection/> */}
-            <ShopBody/>
+            <ShopBody history = {history}/>
             <Footer />
         </Fragment>
     )

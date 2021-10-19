@@ -10,11 +10,11 @@ import RelatedProduct from '../components/RelatedProduct'
 import OrdersList from '../components/OrderList'
 import ListOrder from '../components/ListOrder'
 
-export default function ListOrderPage(){
+export default function ListOrderPage({history}){
     return(
         <Fragment>
-            <Header />
-            <ListOrder/>
+            <Header history = {history} />
+            <ListOrder history = {history}/>
         </Fragment>
     )
 }
